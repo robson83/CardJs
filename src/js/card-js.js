@@ -428,6 +428,11 @@ CardJs.cardTypeFromNumber = function(number) {
   if (number.match(re) != null)
     return "Mastercard";
 
+  // Mastercard - new bins
+  re = new RegExp("^2[2-7]");
+  if (number.match(re) != null)
+      return "Mastercard";
+
   // Discover
   re = new RegExp("^(6011|622(12[6-9]|1[3-9][0-9]|[2-8][0-9]{2}|9[0-1][0-9]|92[0-5]|64[4-9])|65)");
   if (number.match(re) != null)
